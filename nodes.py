@@ -94,7 +94,7 @@ Prior clarification context (may be empty):
 from langchain_groq import ChatGroq
 from state import GraphState
 
-llm = ChatGroq(model="openai/gpt-oss-120b", temperature=0)
+llm = ChatGroq(model="openai/gpt-oss-120b",api_key=st.secrets["GROQ_API_KEY"], temperature=0)
 
 ambiguity_chain = AMBIGUITY_PROMPT | llm.with_structured_output(AmbiguityCheck)
 
