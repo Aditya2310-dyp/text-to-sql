@@ -91,11 +91,10 @@ Prior clarification context (may be empty):
 ])
 
 
-from langchain_ollama import ChatOllama
+from langchain_groq import ChatGroq
 from state import GraphState
 
-MODEL_NAME = "qwen2.5:7b"
-llm = ChatOllama(model=MODEL_NAME, temperature=0)
+llm = ChatGroq(model="openai/gpt-oss-120b", temperature=0)
 
 ambiguity_chain = AMBIGUITY_PROMPT | llm.with_structured_output(AmbiguityCheck)
 
